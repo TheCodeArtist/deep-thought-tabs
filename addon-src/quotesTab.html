@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<link href="https://fonts.googleapis.com/css?family=Arima+Madurai:200|Farsan|Gruppo|Special+Elite" rel="stylesheet"> 
+
+	<style>
+
+	div.button {
+		-moz-text-align-last: center;
+		text-align-last: center;
+		position	: relative;
+		z-index		: 3;
+	}
+	
+	div.quoteText {
+		position	: relative;
+		z-index		: 3;
+		color		: #bfbfbf
+	}
+	
+	div.dark-overlay {
+		opacity		: 0.75; 
+		background	: #202020; 
+		width		: 100%;
+		height		: 100%; 
+		z-index		: -1;
+		top			: 0; 
+		left		: 0; 
+		position	: fixed; 
+	}	
+
+	#imgAttr {
+		position	: fixed;
+		bottom		: 2%;
+		right		: 2%;
+		font-size	: 40%;
+		color		: #808080;
+	}
+	
+	a {
+		color: #808080;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: hotpink;
+		text-decoration: underline;
+	}
+
+	body {
+		font-family	: 'Arima Madurai', cursive; font-size: 32px;
+		text-align	: justify;
+		-moz-text-align-last: center;
+		text-align-last: center;
+		position	: absolute;
+		top			: 25%;
+		left		: 25%;
+		width		: 50%;
+		min-width	: 360px;
+		background	: white no-repeat top center fixed;
+		-webkit-background-size: cover;
+		background-size: cover;
+		opacity		: 1.0;
+		-webkit-transition: opacity 2000ms linear;
+		transition	: opacity 2000ms linear;
+	}
+	</style>
+</head>
+
+<body>
+	<div id="imgAttr"></div>
+	<div class="quoteText" id="quoteText"></div>
+	<button class="button" id="getQuoteBtn">Another</button>
+	<div class="dark-overlay"></div>
+</body>
+
+<script type="text/javascript" src="backgroundImage.js"></script>
+<script type="text/javascript" src="quotesTab.js"></script>
+
+</html>

@@ -1,1 +1,1 @@
-# deep-thought-tabs
+# Deep Thought Tabs
