@@ -127,9 +127,8 @@ function newQuote() {
 		return b.length - a.length;
 	});
 
-	/* Pick at random from the top 3 longest words in the quote */
-	var keywordId = Math.floor(Math.random() * 3);
-	keywords = wordsArray[keywordId];
+	/* Pick the 3 longest words in the quote */
+	keywords = wordsArray[0] + ',' + wordsArray[1] + ',' + wordsArray[2];
 	console.log(keywords)
 	
 	/* Attempt to fetch a backgroundimage, and update it if found */

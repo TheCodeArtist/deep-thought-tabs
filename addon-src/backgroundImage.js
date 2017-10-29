@@ -9,8 +9,8 @@ function get(url)
 
 function loadBackgroundImage(keywords)
 {
-	/* Reference: https://www.flickr.com/services/feeds/docs/photos_public/ */
-	flickrURL = 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tagmode=all&tags=,' + keywords
+	/* Reference: https://www.flickr.com/services/api/flickr.photos.search.html */
+	flickrURL = 'https://api.flickr.com/services/rest/?&method=flickr.photos.search&format=json&nojsoncallback=1&api_key=ad573b275cd8e6a1f080c0d22fc99843&license=7,9,10&per_page=50&extras=url_z&tag_mode=any&tags=' + keywords;
 	var response = get(flickrURL);
 
 	/* Sometimes we may receive malformed JSON */
@@ -24,21 +24,27 @@ function loadBackgroundImage(keywords)
 	}
 
 	/* If no images found... */
-	if (jsonObj.items.length == 0) {
+	if (jsonObj.photos.total == 0) {
 		console.log('No images found!');
 		document.body.style.backgroundImage = 'none';
 		document.getElementById('imgAttr').innerHTML = '';
 		return;
 	}
 	
-	/* Choose one of the images in the list */
-	var randomImageId = Math.floor(Math.random() * jsonObj.items.length);
-		
+	/* Choose one of the top 50 images in the list */
+	/* The value 50 is also hardcoded in the per_page param within the request URL */
+	var imgSearchSet = 50;
+	if (jsonObj.photos.total < 50) {
+		imgSearchSet = jsonObj.photos.total;
+	}
+	var randomImageId = Math.floor(Math.random() * imgSearchSet);
+	console.log (randomImageId);
+	
 	/* Pick an appropriate size of the image
 	 * https://www.flickr.com/services/api/misc.urls.html
 	 */
-	var imageLink = jsonObj.items[randomImageId]['link'];
-	var imageSrc = jsonObj.items[randomImageId]['media']['m'].replace("_m", "_z");
+	var imageLink = 'https://www.flickr.com/photos/' + jsonObj.photos.photo[randomImageId]['owner'] + '/' + jsonObj.photos.photo[randomImageId]['id'];
+	var imageSrc = jsonObj.photos.photo[randomImageId]['url_z'];
 	document.getElementById('imgAttr').innerHTML = '<a href="' + imageLink + '" target="_blank">' + imageLink.replace('https://www.', '') + '</a>';
 	document.body.style.backgroundImage = 'url(' + imageSrc + ')';	
 }
