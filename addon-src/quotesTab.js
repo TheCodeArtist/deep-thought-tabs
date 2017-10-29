@@ -89,6 +89,13 @@ newQuote()
 /* Allow user to generate new quotes */
 document.getElementById("getQuoteBtn").addEventListener("click", newQuote);
 
+/* to avoid warnings about - "Unsafe assignment to innerHTML" */
+function escapeHTML(str) {
+	escapeHTML.replacements = { "&": "&amp;", '"': "&quot;", "'": "&#39;", "<": "&lt;", ">": "&gt;" };
+	return str.replace(/[&"'<>]/g, (m) => escapeHTML.replacements[m]);
+}
+
+
 /* Returns a random quote with random font */
 function newQuote() {
 
@@ -132,7 +139,7 @@ function newQuote() {
 	document.getElementById('imgAttr').style.opacity = 1.0;
 	
 	/* Finally show the new quote */
-	document.getElementById('quoteText').innerHTML = '<p>' + quotes[randomQuoteId] + '</p>';
+	document.getElementById('quoteText').innerHTML = quotes[randomQuoteId];
 	document.getElementById('quoteText').style.opacity = 1.0;
 	
 	/* and Finally show the button */
