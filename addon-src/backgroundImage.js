@@ -2,17 +2,26 @@
 function get(url)
 {
     var httpReq = new XMLHttpRequest();
-    httpReq.open("GET", url, false);
+	httpReq.addEventListener("load", populateBackgroundImage);
+	httpReq.timeout = 10000;
+	httpReq.open("GET", url, true);
 	httpReq.send(null);
-    return httpReq.responseText;
 }
 
 function loadBackgroundImage(keywords)
 {
 	/* Reference: https://www.flickr.com/services/api/flickr.photos.search.html */
-	flickrURL = 'https://api.flickr.com/services/rest/?&method=flickr.photos.search&format=json&nojsoncallback=1&api_key=ad573b275cd8e6a1f080c0d22fc99843&license=7,9,10&safe_search=1&media=photos&sort=interestingness-desc&per_page=50&extras=url_z&tag_mode=any&tags=' + keywords;
-	var response = get(flickrURL);
+	flickrURL = 'https://api.flickr.com/services/rest/?&method=flickr.photos.search' +
+				'&format=json&nojsoncallback=1&api_key=ad573b275cd8e6a1f080c0d22fc99843' +
+				'&license=7,9,10&safe_search=1&media=photos&sort=interestingness-desc' +
+				'&per_page=50&extras=url_z&tag_mode=any&tags=' + keywords;
+	get(flickrURL);
+}
 
+function populateBackgroundImage()
+{
+	response = this.responseText;
+	
 	/* Sometimes we may receive malformed JSON */
 	try {
 		var jsonObj = JSON.parse(response);
