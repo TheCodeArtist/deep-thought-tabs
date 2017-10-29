@@ -102,6 +102,9 @@ function newQuote() {
 	/* Hide the button first */
 	document.getElementById("getQuoteBtn").style.opacity = 0;
 	
+	/* Also hide the image attribution text */
+	document.getElementById('imgAttr').style.opacity = 0;
+	
 	/* Next hide the quote text */
 	document.getElementById('quoteText').style.opacity = 0;
 	
