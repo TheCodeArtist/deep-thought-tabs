@@ -16,9 +16,10 @@ Here are a few of the "deep thoughts" you might encounter:
 * To me, boxing is like a ballet, except there's no music, no choreography, and the dancers hit each other.
 * In weightlifting, I don't think sudden, uncontrolled urination should automatically disqualify you.
 * I wish I had a kryptonite cross, because then you could keep both Dracula AND Superman away.
-
+* [More Deep Thoughts on the internet](https://www.google.co.in/search?q="Deep+thoughts"+by+Jack+Handey') ...
 
 Install [Deep Thought Tabs for Firefox](https://addons.mozilla.org/en-GB/firefox/addon/deep-thought-tabs/)
+
 
 # Screenshots
 
