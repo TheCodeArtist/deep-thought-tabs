@@ -1,7 +1,10 @@
 {
 	"manifest_version": 2,
-	"name": "Deep Thought Tabs",
-	"version": "1.2",
+	"name"		: "Deep Thought Tabs",
+	"description": "Adds funny, profound observations (with images) to newly opened empty tabs.",
+	"version"	: "1.3",
+	"author"	: "TheCodeArtist",
+	"homepage_url": "https://github.com/TheCodeArtist/deep-thought-tabs",
 
 	"content_security_policy": "script-src 'self'; object-src 'self'",
 	
