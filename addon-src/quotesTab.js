@@ -137,7 +137,7 @@ function newQuote() {
 	document.getElementById('imgAttr').style.opacity = 1.0;
 	
 	/* Finally show the new quote */
-	document.getElementById('quoteText').innerHTML = quotes[randomQuoteId];
+	document.getElementById('quoteText').innerHTML = quotes[randomQuoteId] + '<br>' + '<br>';
 	document.getElementById('quoteText').style.opacity = 1.0;
 	
 	/* and Finally show the button */
