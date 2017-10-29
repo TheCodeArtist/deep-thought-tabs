@@ -104,8 +104,8 @@ function newQuote() {
 	document.getElementById("quoteText").style.fontFamily = supportedFonts[randomFontFamily]
 
 	/* Update a quoteText font-size randomly */
-	var randomFontSize = Math.floor(Math.random() * 24);
-	document.getElementById("quoteText").style.fontSize = 16 + randomFontSize;
+	var randomFontSize = Math.floor(Math.random() * 16);
+	document.getElementById("quoteText").style.fontSize = (20 + randomFontSize) + 'px';
 		
 	/* Pick a quote at random from the list of 82 quotes */
 	var randomQuoteId = Math.floor(Math.random() * 82);
