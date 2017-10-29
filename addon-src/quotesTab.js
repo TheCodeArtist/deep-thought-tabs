@@ -79,7 +79,7 @@ var quotes = [
 	'If you ever go temporarily insane,<br>don\'t shoot somebody,<br>like a lot of people do.<br><br>Instead,<br>try to get some weeding done,<br>because you\'d really be surprised.',
 	'It makes me mad when people say I turned and ran like a scared rabbit.<br><br>Maybe it was like an angry rabbit,<br>who was running to go fight in another fight,<br>away from the first fight.',
 	'I think a good way to get into a movie is to show up where they\'re making the movie,<br>then stick a big cactus plant onto your buttocks and start yowling and running around.<br><br>Everyone would think it was funny,<br>and the head movie guy would say,<br>"Hey,<br>let\'s put him in the movie."',
-	'Instead of having \'answers\' on a math test,<br>they should just call them \'impressions\' and it you got a diffrent \'impression\' so what,<br>can\'t we all be brothers?',
+	'Instead of having \'answers\' on a math test,<br>they should just call them \'impressions\' and it you got a different \'impression\' so what,<br>can\'t we all be brothers?',
 	'Probably to a shark about the funniest thing there is,<br>is a wounded seal trying to swim to shore,<br>because WHERE DOES HE THINK HE\'S GOING?!'
 ]
 
