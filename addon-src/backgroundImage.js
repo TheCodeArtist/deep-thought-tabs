@@ -38,13 +38,12 @@ function loadBackgroundImage(keywords)
 		imgSearchSet = jsonObj.photos.total;
 	}
 	var randomImageId = Math.floor(Math.random() * imgSearchSet);
-	console.log (keywords + randomImageId);
-	
+		
 	/* Pick an appropriate size of the image
 	 * https://www.flickr.com/services/api/misc.urls.html
 	 */
 	var imageLink = 'https://www.flickr.com/photos/' + jsonObj.photos.photo[randomImageId]['owner'] + '/' + jsonObj.photos.photo[randomImageId]['id'];
 	var imageSrc = jsonObj.photos.photo[randomImageId]['url_z'];
-	document.getElementById('imgAttr').innerHTML = '<a href="' + imageLink + '" target="_blank">' + imageLink.replace('https://www.', '') + '</a>';
+	document.getElementById('imgAttr').innerHTML = '<a href="' + imageLink + '" target="_blank">' + imageLink.replace('https://www.', '') + '</a> is result ' + randomImageId + ' in search for ' + keywords;
 	document.body.style.backgroundImage = 'url(' + imageSrc + ')';	
 }
