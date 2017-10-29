@@ -31,7 +31,16 @@
 		position	: fixed; 
 	}	
 
-	#imgAttr {
+	div.quoteAttr {
+		position	: fixed;
+		bottom		: 4%;
+		right		: 2%;
+		font-size	: 11px;
+		font-family	: "Arima Madurai";
+		color		: #808080;
+	}
+
+	div.imgAttr {
 		position	: fixed;
 		bottom		: 2%;
 		right		: 2%;
@@ -70,7 +79,13 @@
 </head>
 
 <body>
-	<div id="imgAttr"></div>
+	<div class="quoteAttr">
+		<a href="https://www.deepthoughtsbyjackhandey.com/please-stop-the-deep-thoughts-book/"
+		   target="_blank">
+		The Deep Thought Book
+		</a>
+	</div>
+	<div class="imgAttr" id="imgAttr"></div>
 	<div class="quoteText" id="quoteText"></div>
 	<button class="button" id="getQuoteBtn">Another</button>
 	<div class="dark-overlay"></div>
