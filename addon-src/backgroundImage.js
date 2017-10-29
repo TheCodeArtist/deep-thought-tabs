@@ -10,7 +10,7 @@ function get(url)
 function loadBackgroundImage(keywords)
 {
 	/* Reference: https://www.flickr.com/services/api/flickr.photos.search.html */
-	flickrURL = 'https://api.flickr.com/services/rest/?&method=flickr.photos.search&format=json&nojsoncallback=1&api_key=ad573b275cd8e6a1f080c0d22fc99843&license=7,9,10&per_page=50&extras=url_z&tag_mode=any&tags=' + keywords;
+	flickrURL = 'https://api.flickr.com/services/rest/?&method=flickr.photos.search&format=json&nojsoncallback=1&api_key=ad573b275cd8e6a1f080c0d22fc99843&license=7,9,10&sort=interestingness-desc&per_page=50&extras=url_z&tag_mode=any&tags=' + keywords;
 	var response = get(flickrURL);
 
 	/* Sometimes we may receive malformed JSON */
