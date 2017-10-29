@@ -13,5 +13,7 @@
 	"chrome_url_overrides":
 	{
 		"newtab": "quotesTab.html"
-	}
+	},
+	
+	"permissions": [ "https://api.flickr.com/*", "webRequest" ]
 }

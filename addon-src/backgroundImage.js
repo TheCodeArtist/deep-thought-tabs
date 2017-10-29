@@ -3,14 +3,14 @@ function get(url)
 {
     var httpReq = new XMLHttpRequest();
     httpReq.open("GET", url, false);
-    httpReq.send(null);
+	httpReq.send(null);
     return httpReq.responseText;
 }
 
 function loadBackgroundImage(keywords)
 {
 	/* Reference: https://www.flickr.com/services/feeds/docs/photos_public/ */
-	flickrURL = 'https://cors.io/?https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tagmode=all&tags=,' + keywords
+	flickrURL = 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1&tagmode=all&tags=,' + keywords
 	var response = get(flickrURL);
 
 	/* Sometimes we may receive malformed JSON */
