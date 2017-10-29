@@ -129,8 +129,7 @@ function newQuote() {
 
 	/* Pick the 3 longest words in the quote */
 	keywords = wordsArray[0] + ',' + wordsArray[1] + ',' + wordsArray[2];
-	console.log(keywords)
-	
+		
 	/* Attempt to fetch a backgroundimage, and update it if found */
 	loadBackgroundImage(keywords)
 

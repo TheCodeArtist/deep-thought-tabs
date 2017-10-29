@@ -38,7 +38,7 @@ function loadBackgroundImage(keywords)
 		imgSearchSet = jsonObj.photos.total;
 	}
 	var randomImageId = Math.floor(Math.random() * imgSearchSet);
-	console.log (randomImageId);
+	console.log (keywords + randomImageId);
 	
 	/* Pick an appropriate size of the image
 	 * https://www.flickr.com/services/api/misc.urls.html
