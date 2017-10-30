@@ -23,16 +23,18 @@ Install [Deep Thought Tabs for Firefox](https://addons.mozilla.org/en-GB/firefox
 
 # Screenshots
 
-![Sample screenshot](resources/deep-thought-sample1.jpg/?raw=true "Screenshot of Deep Thought Tabs in action")
+![Sample screenshot](resources/deep-thought-sample0.jpg/?raw=true "Screenshot of Deep Thought Tabs in action")
 
 ![Sample screenshot](resources/deep-thought-sample2.jpg/?raw=true "Screenshot of Deep Thought Tabs in action")
 
 ![Sample screenshot](resources/deep-thought-sample3.jpg/?raw=true "Screenshot of Deep Thought Tabs in action")
 
-![Sample screenshot](resources/deep-thought-sample4.jpg/?raw=true "Screenshot of Deep Thought Tabs in action")
-
 ![Sample screenshot](resources/deep-thought-sample5.jpg/?raw=true "Screenshot of Deep Thought Tabs in action")
 
-![Sample screenshot](resources/deep-thought-sample6.jpg/?raw=true "Screenshot of Deep Thought Tabs in action")
+![Sample screenshot](resources/deep-thought-sample7.jpg/?raw=true "Screenshot of Deep Thought Tabs in action")
+
+![Sample screenshot](resources/deep-thought-sample8.jpg/?raw=true "Screenshot of Deep Thought Tabs in action")
+
+![Sample screenshot](resources/deep-thought-sample9.jpg/?raw=true "Screenshot of Deep Thought Tabs in action")
 
 ## What are you waiting for? Get [Deep Thought Tabs for Firefox](https://addons.mozilla.org/en-GB/firefox/addon/deep-thought-tabs/) now!
