@@ -184,9 +184,12 @@ function newQuote() {
 
 	/* Do NOT show the new quote yet */
 		
-	/* Split the quote into an array of individual words */
-	var separators = ['-', ' ', '"', '\'',  '+', '(', ')', '*', ':', ';', '?', '.', ',', '<', '>'];
-	var wordsArray = quotes[randomQuoteId].toLowerCase().split(new RegExp('[' + separators.join('') + ']', 'g'));
+	/* Split the quote into an array of individual words
+	 *
+	 * Note: Define any characters/words to ignore as a separator.
+	 */
+	var separators = ['-', ' ', '"', '\'',  '+', '(', ')', '*', ':', ';', '?', '.', ',', '<', '>', '&', '!',];
+	var wordsArray = quotes[newQuote.quoteId].toLowerCase().split(new RegExp('(quot)|[' + separators.join('') + ']', 'g'));
 
 	/* Sort the array in order of decreasing word-length */
 	var wordsArray = wordsArray.sort(function(a, b) { 
