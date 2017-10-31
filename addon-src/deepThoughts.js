@@ -68,7 +68,7 @@ var quotes = [
 	'<p>It\'s not good to let any kid near a container that has a skull and crossbones on it,<br />because there might be a skeleton costume inside and the kid could put it on and really scare you.</p>',
 	'<p>If you had a school for professional fireworks people,<br />I don\'t think you could cover fuses in just one class.</p><p>It\'s just too rich a subject.</p>',
 	'<p>People think it would be fun to be a bird because you could fly.</p><p>But they forget the negative side,<br />which is the preening.</p>',
-	'<p>If I live in the Wild West days,<br />instead of carrying a six-gun in my holster,<br />I\'d carry a soldering iron.</p><p>That was if some smart-aleck cowboy said something like,<br />&quot;Hey look.</p><p>He\'s carrying a soldering iron!&quot; and started laughing,<br />and everybody else started laughing,<br />I could just say,<br />&quot;That\'s right,<br />it\'s a soldering iron.</p><p>The soldering iron of justice.&quot; Then everyone would get really quiet and ashamed,<br />because they made fun of the soldering iron of justice,<br />and I could probably hit them up for a free drink.</p>',
+	'<p>If I live in the Wild West days,<br />instead of carrying a six-gun in my holster,<br />I\'d carry a soldering iron.</p><p>That was if some smart-aleck cowboy said something like,<br />&quot;Hey look - He\'s carrying a soldering iron!&quot;<br />and started laughing,<br />and everybody else started laughing,<br />I could just say,<br />&quot;That\'s right, it\'s a soldering iron.<br />The soldering iron of justice.&quot;</p><p>Then everyone would get really quiet and ashamed,<br />because they made fun of the soldering iron of justice,<br />and I could probably hit them up for a free drink.</p>',
 	'<p>When I think back on all the blessings I have been given in my life,<br />I can\'t think of a single one,<br />unless you count that rattlesnake that granted me all those wishes.</p>',
 	'<p>I hope in the future Americans are thought of as a warlike,<br />vicious people,<br />because I bet a lot of high schools would pick \'Americans\' as their mascot.</p>',
 	'<p>Sometimes I think the world has gone completely mad.</p><p>And then I think,<br />&quot;Aw, who cares?&quot;<br />And then I think,<br />&quot;Hey, what\'s for supper?&quot;</p>',
@@ -78,7 +78,7 @@ var quotes = [
 	'<p>Here\'s a good joke to do during an earthquake: straddle a big crack in the ground,<br />and if it opens wider,<br />go &quot;Whoa! Whoa!&quot; and flail your arms around,<br />like you\'re going to fall in.</p>',
 	'<p>If you ever go temporarily insane,<br />don\'t shoot somebody,<br />like a lot of people do.</p><p>Instead,<br />try to get some weeding done,<br />because you\'d really be surprised.</p>',
 	'<p>It makes me mad when people say I turned and ran like a scared rabbit.</p><p>Maybe it was like an angry rabbit,<br />who was running to go fight in another fight,<br />away from the first fight.</p>',
-	'<p>Instead of having \'answers\' on a math test,<br />they should just call them \'impressions\' and it you got a different \'impression\' so what,<br />can\'t we all be brothers?</p>',
+	'<p>Instead of having &quot;answers&quot; on a math test,<br />they should just call them &quot;impressions&quot;<br /> and if you got a different &quot;impression&quot; so what,<br />can\'t we all be brothers?</p>',
 	'<p>Probably to a shark about the funniest thing there is,<br />is a wounded seal trying to swim to shore,<br />because WHERE DOES HE THINK HE\'S GOING!!</p>',
 	'<p>Gift Mug Ideas for near-total strangers #1</p><p>It was nice sitting next to you on the bus.</p>',
 	'<p>Gift Mug Ideas for near-total strangers #2</p><p>Although we may never meet again,<br />i enjoyed our chat on the line at the supermarket.</p>',
@@ -142,7 +142,7 @@ var quotes = [
 	'<p>If you though you have trouble with stage-fright, think of a bullet.</p><p>It waits and waits and waits in a dark chamber until it gets that tap,<br />and then boom! It\'s showtime!</p>',
 	'<p>One teaspoon of powdered soybean extract contains more protein that two teaspoons of powdered soybean extract.</p><p>Maybe.</p><p>I\'ve been eating too much powdered soybean extract.</p>',
 	'<p>I think one reason printing presses are so noisy is so that if somebody yells &quot;Stop the presses!&quot; no one will hear him.</p>',
-	'<p>What this country needs is a good five-cent sports car</p>'
+	'<p>What this country needs is a good five-cent sports car.</p>'
 ]
 
 /* Populate an initial quote */
@@ -171,8 +171,8 @@ function newQuote() {
 	document.getElementById('quoteText').style.opacity = 0;
 	
 	/* Update quoteText font-family randomly */
-	var randomFontFamily = Math.floor(Math.random() * 6);
-	var supportedFonts = [ "Arima Madurai", "Farsan", "Gruppo", "Special Elite", "Love Ya Like A Sister", "IM Fell DW Pica SC"];
+	var randomFontFamily = Math.floor(Math.random() * 7);
+	var supportedFonts = [ "Arima Madurai", "Farsan", "Gruppo", "Special Elite", "Love Ya Like A Sister", "Miriam Libre"];
 	document.getElementById("quoteText").style.fontFamily = supportedFonts[randomFontFamily]
 
 	/* Update a quoteText font-size randomly */

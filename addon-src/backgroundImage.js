@@ -47,7 +47,7 @@ function populateBackgroundImage()
 		imgSearchSet = jsonObj.photos.total;
 	}
 	var randomImageId = Math.floor(Math.random() * imgSearchSet);
-		
+
 	/* Pick an appropriate size of the image
 	 * https://www.flickr.com/services/api/misc.urls.html
 	 */
