@@ -1,9 +1,15 @@
 
-function get(url)
+function get(url, callbackFn)
 {
     var httpReq = new XMLHttpRequest();
-	httpReq.addEventListener("load", populateBackgroundImage);
+
+	/* Who will handle the response */
+	httpReq.addEventListener("load", callbackFn);
+
+	/* Wait upto 10s for a response */
 	httpReq.timeout = 10000;
+
+	/* ASYNC GET */
 	httpReq.open("GET", url, true);
 	httpReq.send(null);
 }
@@ -18,10 +24,18 @@ function loadBackgroundImage(keywords)
 				'&format=json&nojsoncallback=1&api_key=ad573b275cd8e6a1f080c0d22fc99843' +
 				'&license=7,9,10&safe_search=1&media=photos&sort=interestingness-desc' +
 				'&per_page=50&extras=url_z&tag_mode=any&tags=' + keywords;
-	get(flickrURL);
+
+	/* Trigger an ASYNC request to query list of images */
+	get(flickrURL, populateBackgroundImageFromFlickr);
 }
 
-function populateBackgroundImage()
+function populateBackgroundImage(resultId, imgLink, imgSrc)
+{
+	document.getElementById('imgAttr').innerHTML = '<a href="' + imgLink + '" target="_blank">' + imgLink.replace('https://www.', '') + '</a> is result ' + resultId + ' in search for ' + keywords;
+	document.body.style.backgroundImage = 'url(' + imgSrc + ')';
+}
+
+function populateBackgroundImageFromFlickr()
 {
 	/* Hopefully received a valid JSON response of img search query */
 	response = this.responseText;
@@ -56,7 +70,7 @@ function populateBackgroundImage()
 	 * https://www.flickr.com/services/api/misc.urls.html
 	 */
 	var imageLink = 'https://www.flickr.com/photos/' + jsonObj.photos.photo[randomImageId]['owner'] + '/' + jsonObj.photos.photo[randomImageId]['id'];
-	var imageSrc = jsonObj.photos.photo[randomImageId]['url_z'];
-	document.getElementById('imgAttr').innerHTML = '<a href="' + imageLink + '" target="_blank">' + imageLink.replace('https://www.', '') + '</a> is result ' + randomImageId + ' in search for ' + keywords;
-	document.body.style.backgroundImage = 'url(' + imageSrc + ')';	
+	var imageSource = jsonObj.photos.photo[randomImageId]['url_z'];
+
+	populateBackgroundImage(randomImageId, imageLink, imageSource);
 }
