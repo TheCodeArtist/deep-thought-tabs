@@ -145,6 +145,9 @@ var quotes = [
 	'<p>What this country needs is a good five-cent sports car.</p>'
 ]
 
+/* Shuffle the array on quotes once at launch */
+fyShuffle(quotes);
+
 /* Populate an initial quote */
 newQuote()
 
@@ -157,6 +160,25 @@ function escapeHTML(str) {
 	return str.replace(/[&"'<>]/g, (m) => escapeHTML.replacements[m]);
 }
 
+/* Fisher-Yates Shuffle algorithm
+ * Reference: https://stackoverflow.com/a/18806417/319204
+ */
+function fyShuffle(array) {
+    var i = array.length,
+        j = 0,
+        temp;
+
+    while (i--) {
+
+        j = Math.floor(Math.random() * (i+1));
+
+        // swap randomly chosen element with current element
+        temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    return array;
+}
 
 /* Returns a random quote with random font */
 function newQuote() {
@@ -169,6 +191,22 @@ function newQuote() {
 	
 	/* Next hide the quote text */
 	document.getElementById('quoteText').style.opacity = 0;
+
+	/* Check and Initialise the quote pointer */
+    if ( typeof newQuote.quoteId == 'undefined' ) {
+        newQuote.quoteId = -1;
+    }
+	
+	/* Pick the next quote from the shuffled list of quotes */
+	newQuote.quoteId++;
+	
+	/* If hit the end, re-shuffle array of quotes and repeat at the beginning */
+	if (newQuote.quoteId >= quotes.length) {
+		fyShuffle(quotes);
+		newQuote.quoteId = 0;
+	}
+	
+	/* Do NOT show the new quote yet */
 	
 	/* Update quoteText font-family randomly */
 	var randomFontFamily = Math.floor(Math.random() * 7);
@@ -178,12 +216,7 @@ function newQuote() {
 	/* Update a quoteText font-size randomly */
 	var randomFontSize = Math.floor(Math.random() * 16);
 	document.getElementById("quoteText").style.fontSize = (20 + randomFontSize) + 'px';
-		
-	/* Pick a quote at random from the list of 82 quotes */
-	var randomQuoteId = Math.floor(Math.random() * 144);
 
-	/* Do NOT show the new quote yet */
-		
 	/* Split the quote into an array of individual words
 	 *
 	 * Note: Define any characters/words to ignore as a separator.
@@ -206,7 +239,7 @@ function newQuote() {
 	document.getElementById('imgAttr').style.opacity = 1.0;
 	
 	/* Finally show the new quote */
-	document.getElementById('quoteText').innerHTML = quotes[randomQuoteId] + '<br />' + '<br />';
+	document.getElementById('quoteText').innerHTML = quotes[newQuote.quoteId] + '<br />' + '<br />';
 	document.getElementById('quoteText').style.opacity = 1.0;
 	
 	/* and Finally show the button */
