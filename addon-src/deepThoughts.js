@@ -180,7 +180,8 @@ function newQuote() {
 	document.getElementById("quoteText").style.fontSize = (20 + randomFontSize) + 'px';
 		
 	/* Pick a quote at random from the list of 82 quotes */
-	var randomQuoteId = Math.floor(Math.random() * 82);
+	var randomQuoteId = Math.floor(Math.random() * 144);
+
 	/* Do NOT show the new quote yet */
 		
 	/* Split the quote into an array of individual words */
