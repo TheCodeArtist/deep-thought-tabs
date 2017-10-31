@@ -10,6 +10,9 @@ function get(url)
 
 function loadBackgroundImage(keywords)
 {
+	/* Immediately clear current background image */
+	document.body.style.backgroundImage = "none";
+	
 	/* Reference: https://www.flickr.com/services/api/flickr.photos.search.html */
 	flickrURL = 'https://api.flickr.com/services/rest/?&method=flickr.photos.search' +
 				'&format=json&nojsoncallback=1&api_key=ad573b275cd8e6a1f080c0d22fc99843' +
@@ -20,6 +23,7 @@ function loadBackgroundImage(keywords)
 
 function populateBackgroundImage()
 {
+	/* Hopefully received a valid JSON response of img search query */
 	response = this.responseText;
 	
 	/* Sometimes we may receive malformed JSON */
@@ -34,7 +38,7 @@ function populateBackgroundImage()
 
 	/* If no images found... */
 	if (jsonObj.photos.total == 0) {
-		console.log('No images found!');
+		console.log('No images found! for query:' + flickrURL);
 		document.body.style.backgroundImage = 'none';
 		document.getElementById('imgAttr').innerHTML = '';
 		return;

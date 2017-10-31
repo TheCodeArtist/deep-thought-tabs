@@ -149,12 +149,12 @@ var quotes = [
 fyShuffle(quotes);
 
 /* Populate an initial quote */
-newQuote()
+newQuote();
 
 /* Allow user to generate new quotes */
 document.getElementById("getQuoteBtn").addEventListener("click", newQuote);
 
-/* to avoid warnings about - "Unsafe assignment to innerHTML" */
+/* Can use this to avoid warnings about - "Unsafe assignment to innerHTML" */
 function escapeHTML(str) {
 	escapeHTML.replacements = { "&": "&amp;", '"': "&quot;", "'": "&#39;", "<": "&lt;", ">": "&gt;" };
 	return str.replace(/[&"'<>]/g, (m) => escapeHTML.replacements[m]);
@@ -244,4 +244,5 @@ function newQuote() {
 	
 	/* and Finally show the button */
 	document.getElementById("getQuoteBtn").style.opacity = 1.0;
+
 }
