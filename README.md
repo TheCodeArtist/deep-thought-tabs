@@ -1,12 +1,14 @@
-# Deep Thought Tabs
-*Adds funny, profound observations in newly opened empty tabs, with fresh images each time.*
+<img align="left" src="resources/deep-thought-icon.jpg?raw=true">
 
+# Deep Thought Tabs
+
+*Adds funny, profound observations in newly opened empty tabs, with fresh images each time.*  
 [**Deep Thought Tabs for Firefox**](https://addons.mozilla.org/en-GB/firefox/addon/deep-thought-tabs/)
 
 * *WebExtension written in plain JavaScript. No libraries. No cruft.*
 * *Displays "deep-thoughts" even in offline-mode (no background-images).*
 * *Fetches relevant fresh background images each-time from the Flickr public feed.*
-* *Checkout the [source](https://github.com/TheCodeArtist/deep-thought-tabs/tree/master/addon-src) to learn how to create simple webextension addons for Firefox.*
+* *Checkout the [source](https://github.com/TheCodeArtist/deep-thought-tabs/tree/master/addon-src) to learn how to create simple webextension addons for Firefox in JavaScript.*
 
 
 ## Discover your funny and/or profound side each time you open a new tab.
@@ -16,9 +18,9 @@ Here are a few of the "deep thoughts" you might encounter:
 * To me, boxing is like a ballet, except there's no music, no choreography, and the dancers hit each other.
 * In weightlifting, I don't think sudden, uncontrolled urination should automatically disqualify you.
 * I wish I had a kryptonite cross, because then you could keep both Dracula AND Superman away.
-* [More Deep Thoughts on the internet](https://www.google.co.in/search?q="Deep+thoughts"+by+Jack+Handey') ...
+* More Deep Thoughts on the internet [here](https://www.google.co.in/search?q="Deep+thoughts"+by+Jack+Handey') and [here](https://armymans.tumblr.com/)...
 
-Install [Deep Thought Tabs for Firefox](https://addons.mozilla.org/en-GB/firefox/addon/deep-thought-tabs/)
+Install [Deep Thought Tabs](https://addons.mozilla.org/en-GB/firefox/addon/deep-thought-tabs/) web-extension add-on for Firefox.
 
 
 # Screenshots
