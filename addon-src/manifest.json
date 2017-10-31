@@ -1,21 +1,21 @@
 {
-	"manifest_version": 2,
-	"name"		: "Deep Thought Tabs",
-	"description": "Adds funny, profound observations (with images) to newly opened empty tabs.",
-	"version"	: "1.3",
-	"author"	: "TheCodeArtist",
-	"homepage_url": "https://github.com/TheCodeArtist/deep-thought-tabs",
+	"manifest_version"	: 2,
+	"name"				: "Deep Thought Tabs",
+	"description"		: "Adds funny, profound observations (with images) to newly opened empty tabs.",
+	"version"			: "1.4",
+	"author"			: "TheCodeArtist",
+	"homepage_url"		: "https://github.com/TheCodeArtist/deep-thought-tabs",
 
 	"content_security_policy": "script-src 'self'; object-src 'self'",
 	
 	"background":
 	{
-		"scripts": ["quotesTab.js"]
+		"scripts": ["deepThoughts.js"]
 	},
 
 	"chrome_url_overrides":
 	{
-		"newtab": "quotesTab.html"
+		"newtab": "deepThoughts.html"
 	},
 	
 	"permissions": [ "https://api.flickr.com/*", "webRequest" ]
