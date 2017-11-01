@@ -15,27 +15,33 @@
 		color		: #f0f0f0;
 	}	
 
-	button {
+	div.bottomRight {
 		position	: fixed;
-		bottom		: 7%;
+		bottom		: 2%;
 		right		: 2%;
+		text-align	: right;
+		-moz-text-align-last: right;
+		text-align-last: right;
+	}
+	
+	button {
+		position	: relative;
+		right		: 0px;
 		font-size	: 11px;
 		z-index		: 3;
 	}
 	
 	div.quoteAttr {
-		position	: fixed;
-		bottom		: 4%;
-		right		: 2%;
-		font-size	: 11px;
+		position	: relative;
+		right		: 0px;
+		font-size	: 12px;
 		font-family	: "Arima Madurai";
 		color		: #a0a0a0;
 	}
 
 	div.imgAttr {
-		position	: fixed;
-		bottom		: 2%;
-		right		: 2%;
+		position	: relative;
+		right		: 0px;
 		font-size	: 11px;
 		font-family	: "Arima Madurai";
 		color		: #a0a0a0;
@@ -68,9 +74,9 @@
 		-moz-text-align-last: center;
 		text-align-last: center;
 		position	: absolute;
-		top			: 25%;
-		left		: 25%;
-		width		: 50%;
+		top			: 15%;
+		left		: 17%;
+		width		: 66%;
 		min-width	: 200px;
 		background	: black no-repeat center center fixed;
 		-webkit-background-size: cover;
@@ -84,24 +90,25 @@
 
 	<div class="quoteText" id="quoteText"></div>
 	
-	<button class="button" id="getQuoteBtn">Hit me with another one!</button>
+	<div class="bottomRight">
+		<button class="button" id="getQuoteBtn">Hit me with another one!</button>
 
-	<div class="quoteAttr">
-		Inspired by 
-		<a href='https://www.google.co.in/search?q="Deep+thoughts"+by+Jack+Handey'
-		target="_blank">
-		Deep Thoughts
-		</a>
-		and
-		<a href='https://en.wikipedia.org/wiki/Army_Man_(magazine)'
-		target="_blank">
-		Army Man magazine
-		</a>
-		.
+		<div class="quoteAttr">
+			Inspired by 
+			<a href='https://www.google.co.in/search?q="Deep+thoughts"+by+Jack+Handey'
+			target="_blank">
+			Deep Thoughts
+			</a>
+			and
+			<a href='https://en.wikipedia.org/wiki/Army_Man_(magazine)'
+			target="_blank">
+			Army Man magazine
+			</a>
+			.
+		</div>
+
+		<div class="imgAttr" id="imgAttr"></div>
 	</div>
-
-	<div class="imgAttr" id="imgAttr"></div>
-
 	<div class="darkOverlay"></div>
 		
 </body>
