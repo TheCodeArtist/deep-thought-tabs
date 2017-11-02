@@ -33,6 +33,33 @@ function fyShuffle(array) {
     return array;
 }
 
+function get(url, callbackFn)
+{
+    var httpReq = new XMLHttpRequest();
+
+	/* Who will handle the response */
+	httpReq.addEventListener("load", callbackFn);
+
+	/* Wait upto 10s for a response */
+	httpReq.timeout = 10000;
+
+	/* ASYNC GET */
+	httpReq.open("GET", url, true);
+	httpReq.send(null);
+}
+
+function loadBackgroundImage(keywords)
+{
+		
+	/* Immediately clear current background image before continuing */
+	document.body.style.backgroundImage = "none";
+	
+	/* TODO: Add logic to choose image source here.
+	 * For now prefer unsplash over flickr.
+	 */
+	loadBackgroundImageFromUnsplash(keywords);
+}
+
 /* Returns a random quote with random font */
 function newQuote() {
 
