@@ -13,6 +13,12 @@ function loadBackgroundImageFromUnsplash(keywords)
 	get(unsplashUrl, populateBackgroundImageFromUnsplash);
 }
 
+/* Function triggerred upon expiry of "back-off from rate-limit" period */
+function stopRateLimitingUnsplash()
+{
+	loadBackgroundImage.atUnsplashRateLimit = 0;
+}
+
 function populateBackgroundImageFromUnsplash()
 {
 	/* Obtain remaining queries as per rate-limit */
@@ -20,12 +26,18 @@ function populateBackgroundImageFromUnsplash()
 	
 	if (unsplashQueriesRemaining == 0) {
 		/* We have hit the unsplash hourly rate-limit.
-		 * Fallback to flickr.
+		 * Set temporary backoff flasg for subsequent requests and fallback to flickr.
 		 */
+		loadBackgroundImage.atUnsplashRateLimit = 1;
+		
+		/* Backoff from unsplash for 5 to 15 minutes */
+		var backoffDelay = (300000 + Math.floor(Math.random() * 300000));
+		setTimeout(stopRateLimitingUnsplash, backoffDelay);
+				
 		loadBackgroundImageFromFlickr(keywords);
 		return;
 	}
-
+	
 	/* Hopefully received a valid JSON response of img search query */
 	var response = this.responseText;
 	

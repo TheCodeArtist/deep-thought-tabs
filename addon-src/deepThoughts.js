@@ -50,14 +50,28 @@ function get(url, callbackFn)
 
 function loadBackgroundImage(keywords)
 {
-		
+	/* Check and Initialise rateLimit detected flag */
+    if ( typeof loadBackgroundImage.atUnsplashRateLimit == 'undefined' ) {
+        var atUnsplashRateLimit = 0;
+    }
+	
 	/* Immediately clear current background image before continuing */
 	document.body.style.backgroundImage = "none";
 	
 	/* TODO: Add logic to choose image source here.
-	 * For now prefer unsplash over flickr.
+	 * For now prefer unsplash over flickr
+	 * unless recently rate-limited by unsplash.
 	 */
-	loadBackgroundImageFromUnsplash(keywords);
+
+	if (loadBackgroundImage.atUnsplashRateLimit == 1) {
+		/* If temporarily backing-off unsplash, directly use flickr */
+		loadBackgroundImageFromFlickr(keywords);
+	} else {
+		/* Try unsplash. If response received is failure,
+		 * then async response handler will initiate fallback to flickr.
+		 */
+		loadBackgroundImageFromUnsplash(keywords);
+	}
 }
 
 /* Returns a random quote with random font */
