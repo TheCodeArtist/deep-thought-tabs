@@ -16,7 +16,5 @@
 	"chrome_url_overrides":
 	{
 		"newtab": "deepThoughts.html"
-	},
-	
-	"permissions": [ "https://api.flickr.com/*", "webRequest" ]
+	}
 }
