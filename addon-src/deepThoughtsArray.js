@@ -22,7 +22,7 @@ var quotes = [
 	'<p>I think someone should have had the decency to tell me the luncheon was free.</p><p>To make someone run out with potato salad in his hand,<br />pretending he\'s throwing up,<br />is not what I call hospitality.</p>',
 	'<p>To me,<br />clowns aren\'t funny.</p><p>In fact,<br />they\'re kind of scary.</p><p>I\'ve wondered where this started, and I think it goes back to the time I went to the circus,<br />and a clown killed my dad.</p>',
 	'<p>Most people don\'t realize that large pieces of coral,<br />which have been painted brown and attached to the skull by common wood screws,<br />can make a child look like a deer.</p>',
-	'<p>If trees could scream,<br />would we be so cavalier about cutting them down? We might,<br />if they screamed all the time,<br />for no good reason.</p>',
+	'<p>If trees could scream,<br />would we be so cavalier about cutting them down?</p><p>We might,<br />if they screamed all the time, for no good reason.</p>',
 	'<p>Better not take a dog on the space shuttle,<br />because if he sticks his head out when you\'re coming home his face might burn up.</p>',
 	'<p>You know what would make a good story?<br />Something about a clown who made people happy,<br />but inside he\'s really sad.</p><p>Also,<br />he has severe diarrhea.</p>',
 	'<p>Sometimes when I feel like killing someone,<br />I do a little trick to calm myself down.</p><p>I\'ll go over to the person\'s house and ring the doorbell.</p><p>When the person comes to the door,<br />I\'m gone,<br />but you know what I\'ve left on the porch? A jack-o-lantern with a knife stuck in the side of its head with a note that says &quot;You.&quot;</p><p>After that I usually feel a lot better,<br />and no harm done.</p>',
@@ -127,7 +127,7 @@ var quotes = [
 	'<p>My friend from Michigan says that if you pushed all the Great Lakes together they\'d be as big as the Mediterranean.</p><p>I say, why bother?</p>',
 	'<p>At the mall, i found this man\'s hand in my pocket.<br />&quot;What do you think you\'re doing?&quot; i asked.<br />He said he was looking for a match.<br />I said, &quot;Why didn\'t you ask?&quot;<br />And he said, &quot;I don\'t talk to strangers.&quot;</p>',
 	'<p>Is it possible to have too much happiness?</p><p>In a way, i suppose it is.<br />No, wait, i\'m going to change my mind and say no.</p>',
-	'<p>To us, it might look like just a rag, flapping in the wind.</p><p>But to the brave, embattled men of the fort, it was more than that.</p><p>It was a flag of surrender. And after that, it was torn-up and used for shoeshine rags, so the men would look nice for the surrender.</p>',
+	'<p>To us, it might look like just a rag, flapping in the wind.</p><p>But to the brave, embattled men of the fort, it was more than that.</p><p>It was a flag of surrender.</p><p>And after that,<br />it was torn-up and used for shoeshine rags,<br />so the men would look nice for the surrender.</p>',
 	'<p>When i heard the news that the hurricane was tossing trees around like matchsticks, i started to get worried.</p><p>I had a giant sculpture of a matchstick in my yard.</p>',
 	'<p>Is there anything more beautiful than a beautiful beautiful flamingo, flying across in front of a beautiful sunset? And he is carrying a beautiful rose in his beak, and also maybe he\'s carrying a very beautiful painting with his feet. And also you\'re drunk.</p>',
 	'<p>Oh, God, it\'s a dart, a poison dart!</p><p>No wait! I don\'t think it\s a poison dart. It\'s not.<br />It\'s a vitamin dart! I\'m going to live!</p><p>In fact, i\'ll probably live a bit longer than i otherwise would have!</p>',
@@ -140,7 +140,7 @@ var quotes = [
 	'<p>The Gods are angry?</p><p>What the hell for?</p><p>They\'ve got a pretty sweet deal!</p>',
 	'<p>A job worth doing is worth doing. Right?</p>',
 	'<p>We like to praise birds for flying.</p><p>But how much of it is actually flying,<br />and how much is just sort of coasting from the previous flap?</p>',
-	'<p>Dad always thought laughter was the best medicine, which i guess is why several of us dies of tuberculosis.</p>',
+	'<p>Dad always thought laughter was the best medicine, which i guess is why several of us died of tuberculosis.</p>',
 	'<p>Instead of raising your hand to ask a question in class, how about individual push-buttons on each desk. That way when you want to ask a question, you simply press the button and it lights-up a corresponding number on a tote-board at the front of the class.</p><p>Then, all the professor has to do is check the lighted number against a master sheet of names and numbers to see who wants to ask a question.</p>',
 	'<p>If God were my co-pilot, i think i\'d let Him handle almost all the routine flying.</p><p>I might do the landings... i\'m pretty good at those.</p>',
 	'<p>It hardly seems worth the effort to put anything here</p>',
@@ -148,5 +148,6 @@ var quotes = [
 	'<p>If you though you have trouble with stage-fright, think of a bullet.</p><p>It waits and waits and waits in a dark chamber until it gets that tap,<br />and then boom! It\'s showtime!</p>',
 	'<p>One teaspoon of powdered soybean extract contains more protein that two teaspoons of powdered soybean extract.</p><p>Maybe.</p><p>I\'ve been eating too much powdered soybean extract.</p>',
 	'<p>I think one reason printing presses are so noisy is so that if somebody yells &quot;Stop the presses!&quot; no one will hear him.</p>',
-	'<p>What this country needs is a good five-cent sports car.</p>'
+	'<p>What this country needs is a good five-cent sports car.</p>',
+	'<p>If it\'s stupid, but it works,<br /> it\'s not stupid.</p>'
 ]
