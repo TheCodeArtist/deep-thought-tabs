@@ -48,6 +48,11 @@ function get(url, callbackFn)
 	httpReq.send(null);
 }
 
+/* Used by array.filter method to remove duplicate entries in an array */
+function onlyUnique(value, index, self) { 
+    return self.indexOf(value) === index;
+}
+
 function loadBackgroundImage(keywords)
 {
 	/* Check and Initialise rateLimit detected flag */
@@ -56,7 +61,9 @@ function loadBackgroundImage(keywords)
     }
 	
 	/* Immediately clear current background image before continuing */
-	document.body.style.backgroundImage = "none";
+	for (i = 0; i < 3; i++) {
+		document.getElementById('img' + i).style.backgroundImage = "none";
+	}
 	
 	/* ...and immediately clear the background image attribution as well */
 	document.getElementById('imgAttr').innerHTML = '';
@@ -115,7 +122,6 @@ function newQuote() {
 	document.getElementById("quoteText").style.fontSize = (20 + randomFontSize) + 'px';
 
 	/* Split the quote into an array of individual words
-	 *
 	 * Note: Define any characters/words to ignore as a separator.
 	 */
 	var separators = ['-', ' ', '"', '\'',  '+', '(', ')', '*', ':', ';', '?', '.', ',', '<', '>', '&', '!',];

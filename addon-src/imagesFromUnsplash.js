@@ -53,42 +53,64 @@ function populateBackgroundImageFromUnsplash()
 
 	/* If no images found... */
 	if (jsonObj.total == 0) {
-		console.log('No images found! for query:' + unsplashUrl);
+		console.log('No images found! for query: ' + this.responseURL);
 		document.body.style.backgroundImage = 'none';
 		document.getElementById('imgAttr').innerHTML = '';
 		return;
 	}
 
-	/* Choose one of the top 10 images in the list */
+	/* Choose upto 10 of the top images in the list */
 	var imgSearchSet = 10;
+	var randomImageIds = [];
 	if (jsonObj.total < 10) {
 		imgSearchSet = jsonObj.total;
 	}
-	var randomImageId = Math.floor(Math.random() * imgSearchSet);
 
-	/* Pick an appropriate size of the image
-	 * https://www.flickr.com/services/api/misc.urls.html
-	 */
-	var imgLink = jsonObj.results[randomImageId].links.html;
-	var imgSrc = jsonObj.results[randomImageId].urls.regular;
-	var imgDesc = jsonObj.results[randomImageId].description;
-	var imgAuthorName = jsonObj.results[randomImageId].user.name;
-	var imgAuthorLink = jsonObj.results[randomImageId].user.links.html;
-	var unsplashUTM = '?utm_source=Deep_Thoughts&utm_medium=referral&utm_campaign=api-credit'
-
-	document.body.style.backgroundImage = 'url(' + imgSrc + ')';
-
-	/* Set Image name to its description if provided, else use the backlink */
-	if (imgDesc) {
-		var imgName = imgDesc;
-	} else {
-		var imgName = imgLink.replace('https://', '');
+	/* Shuffle IDs */
+	for (var i = 0; i < imgSearchSet; i++) {
+		randomImageIds[i] = i;
 	}
 
-	/* Prepare unsplash attribution */
-	document.getElementById('imgAttr').innerHTML = '' +
-	'<a href="' + imgLink + unsplashUTM + '" target="_blank">' + imgName + '</a>' +
-	' by <a href="' + imgAuthorLink + unsplashUTM + '" target="_blank">' + imgAuthorName + '</a>' + ' / ' +
-	'<a href="https://unsplash.com' + unsplashUTM + '" target="_blank">' + 'Unsplash' + '</a>' +
-	' is result ' + ++randomImageId + ' in search for (' + keywords.replace(/,/g, ' / ') +')';
+	fyShuffle(randomImageIds);
+
+	for (var i = 0; i < 3; i++) {
+		/* Pick upto any 3 images */
+		var imgSrc = jsonObj.results[randomImageIds[i]].urls.regular;
+
+		/* Update the image */
+		document.getElementById('img' + i).style.backgroundImage = 'url(' + imgSrc + ')';
+
+		/* Select a "Region Of Interest" randomly */
+		random = -20 + (Math.random() * 40);
+		document.getElementById('img' + i).style.setProperty('--img'+i+'dX', random +'%');
+		random = -20 + (Math.random() * 40);
+		document.getElementById('img' + i).style.setProperty('--img'+i+'dY', random +'%');
+	}
+
+	/* Prepare unsplash attribution for each img used */
+	var unsplashUTM = '?utm_source=Deep_Thoughts&utm_medium=referral&utm_campaign=api-credit'
+	var uniqueImgAttrs = Math.min(3, randomImageIds.filter(onlyUnique).length);
+	var individualImgAttr = '';
+	
+	for (var i = 0; i < uniqueImgAttrs; i++) {
+		var imgLink = jsonObj.results[randomImageIds[i]].links.html;
+		var imgDesc = jsonObj.results[randomImageIds[i]].description;
+		var imgAuthorName = jsonObj.results[randomImageIds[i]].user.name;
+		var imgAuthorLink = jsonObj.results[randomImageIds[i]].user.links.html;
+		
+		/* Set Image name to its description if provided, else use the backlink as Image name */
+		if (imgDesc) {
+			var imgName = imgDesc;
+		} else {
+			var imgName = imgLink.replace('https://', '');
+		}
+	
+		individualImgAttr += '<a href="' + imgLink + unsplashUTM + '" target="_blank">' + imgName + '</a>' +
+		' by <a href="' + imgAuthorLink + unsplashUTM + '" target="_blank">' + imgAuthorName + '<br\></a>'
+	}
+	
+	/* Update unsplash attribution */
+	document.getElementById('imgAttr').innerHTML = individualImgAttr +
+		' found in search results for (' + keywords.replace(/,/g, ' / ') +') on ' +
+		'<a href="https://unsplash.com' + unsplashUTM + '" target="_blank">' + 'Unsplash' + '</a>';
 }

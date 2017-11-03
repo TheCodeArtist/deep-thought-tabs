@@ -3,98 +3,32 @@
 
 <head>
 	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-	<link href="https://fonts.googleapis.com/css?family=Arima+Madurai:200|Farsan|Gruppo|Special+Elite|Love+Ya+Like+A+Sister|Miriam+Libre" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Arima+Madurai:200|Farsan|Gruppo|Special+Elite|Love+Ya+Like+A+Sister|Miriam+Libre" rel="stylesheet">
+	<link href="deepThoughts.css" rel="stylesheet">
 
 	<title>Deep Thoughts</title>
-	
-	<style>
-
-	div.quoteText {
-		position	: relative;
-		z-index		: 0;
-		color		: #f0f0f0;
-	}	
-
-	div.bottomRight {
-		position	: fixed;
-		bottom		: 2%;
-		right		: 2%;
-		text-align	: right;
-		-moz-text-align-last: right;
-		text-align-last: right;
-	}
-	
-	button {
-		position	: relative;
-		right		: 0px;
-		font-size	: 11px;
-		z-index		: 3;
-	}
-	
-	div.quoteAttr {
-		position	: relative;
-		right		: 0px;
-		font-size	: 12px;
-		font-family	: "Arima Madurai";
-		color		: #a0a0a0;
-		z-index		: 3;
-	}
-
-	div.imgAttr {
-		position	: relative;
-		right		: 0px;
-		font-size	: 11px;
-		font-family	: "Arima Madurai";
-		color		: #a0a0a0;
-		z-index		: 3;
-	}
-	
-	a {
-		color		: #a0a0a0;
-		text-decoration: none;
-	}
-
-	a:hover {
-		color: hotpink;
-		text-decoration: underline;
-	}
-
-		
-	div.darkOverlay {
-		opacity		: 0.75; 
-		background	: #202020; 
-		width		: 100%;
-		height		: 100%; 
-		z-index		: -1;
-		top			: 0; 
-		left		: 0; 
-		position	: fixed; 
-	}
-	
-	body {
-		text-align	: justify;
-		-moz-text-align-last: center;
-		text-align-last: center;
-		position	: absolute;
-		top			: 15%;
-		left		: 17%;
-		width		: 66%;
-		min-width	: 200px;
-		background	: black no-repeat center center fixed;
-		-webkit-background-size: cover;
-		background-size: cover;
-		opacity		: 1.0;
-	}
-	</style>
 </head>
 
 <body>
 
 	<div class="quoteText" id="quoteText"></div>
+
+	<div class="slideshow" id="slideshow">
+		<div class="slideshow-image" id="img0" ></div>
+		<div class="slideshow-image" id="img1" ></div>
+		<div class="slideshow-image" id="img2" ></div>
+	</div>	
 	
 	<div class="bottomRight">
+	
 		<button class="button" id="getQuoteBtn">Hit me with another one!</button>
 
+		<div class="quoteAttr">
+			<a href='https://github.com/TheCodeArtist/deep-thought-tabs'target="_blank">
+			❤ Deep Thought Tabs
+			</a>
+		</div>
+		
 		<div class="quoteAttr">
 			Inspired by 
 			<a href='https://www.google.co.in/search?q="Deep+thoughts"+by+Jack+Handey'
@@ -106,13 +40,14 @@
 			target="_blank">
 			Army Man magazine
 			</a>
-			.
+			<hr>
 		</div>
 
 		<div class="imgAttr" id="imgAttr"></div>
 	</div>
+	
 	<div class="darkOverlay"></div>
-		
+	
 </body>
 
 <script type="text/javascript" src="imagesFromFlickr.js"></script>
