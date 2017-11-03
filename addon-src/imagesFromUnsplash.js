@@ -53,7 +53,7 @@ function populateBackgroundImageFromUnsplash()
 
 	/* If no images found... */
 	if (jsonObj.total == 0) {
-		console.log('No images found! for query:' + unsplashURL);
+		console.log('No images found! for query:' + unsplashUrl);
 		document.body.style.backgroundImage = 'none';
 		document.getElementById('imgAttr').innerHTML = '';
 		return;
