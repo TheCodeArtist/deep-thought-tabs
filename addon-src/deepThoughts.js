@@ -58,6 +58,9 @@ function loadBackgroundImage(keywords)
 	/* Immediately clear current background image before continuing */
 	document.body.style.backgroundImage = "none";
 	
+	/* ...and immediately clear the background image attribution as well */
+	document.getElementById('imgAttr').innerHTML = '';
+	
 	/* TODO: Add logic to choose image source here.
 	 * For now prefer unsplash over flickr
 	 * unless recently rate-limited by unsplash.
