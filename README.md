@@ -9,8 +9,11 @@
 * *Displays "deep-thoughts" even in offline-mode (no background-images).*
 * *Fetches relevant fresh background images each-time from the Flickr public feed.*
 * *Checkout the [source](https://github.com/TheCodeArtist/deep-thought-tabs/tree/master/addon-src) to learn how to create simple webextension addons for Firefox in JavaScript.*
-* *Fisher-Yates shuffle algorithm.*
-
+* *Few interesting bits of code:*
+  * *Fisher-Yates shuffle algorithm.*
+  * *Ken-Burns effect.*
+  * *Visual (image-preview) tooltips in CSS+JS.*
+  * *Asynchronous XMLHttpRequest.*
 
 ## Discover your funny and/or profound side each time you open a new tab.
 Here are a few of the "deep thoughts" you might encounter:
