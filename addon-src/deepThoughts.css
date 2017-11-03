@@ -118,6 +118,34 @@
 	}
 }
 
+/* Image tooltip */
+ 
+a.tooltip {
+	outline			: none;
+}
+
+a.tooltip:hover {
+	text-decoration	: none;
+} 
+
+a.tooltip span {
+    display			: none;
+}
+
+a.tooltip:hover span{
+    display			: inline;
+    position		: fixed;
+	top				: 2%;
+	right			: 1%;
+	width			: auto;
+	font-size		: 0px;
+	color			: #202020;
+    background		: #202020;
+	border-radius	: 1px;
+	box-shadow		: 0px 0px 4px 2px hotpink;
+}
+
+
 /* ALT white quote card with drop-shadow */
 //h1 { position: absolute; top: 50%; left: 50%; transform: translate3d(-50%, -50%, 0); z-index: 99; text-align: center; font-family: Raleway, sans-serif; font-weight: 300; text-transform: uppercase; background-color: rgba(255, 255, 255, 0.75); box-shadow: 0 1em 2em -1em rgba(0, 0, 0, 0.5); padding: 1em 2em; line-height: 1.5; }
 //h1 small { display: block; text-transform: lowercase; font-size: .7em; }
@@ -163,7 +191,7 @@ div.quoteAttr {
 	right		: 0px;
 	font-size	: 12px;
 	font-family	: "Arima Madurai";
-	color		: #a0a0a0;
+	color		: #c0c0c0;
 	z-index		: 3;
 }
 
@@ -172,12 +200,12 @@ div.imgAttr {
 	right		: 0px;
 	font-size	: 11px;
 	font-family	: "Arima Madurai";
-	color		: #a0a0a0;
+	color		: #c0c0c0;
 	z-index		: 3;
 }
 
 a {
-	color		: #808040;
+	color		: #b0b040;
 	text-decoration: none;
 }
 

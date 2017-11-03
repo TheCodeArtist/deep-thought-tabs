@@ -104,8 +104,12 @@ function populateBackgroundImageFromUnsplash()
 		} else {
 			var imgName = imgLink.replace('https://', '');
 		}
-	
-		individualImgAttr += '<a href="' + imgLink + unsplashUTM + '" target="_blank">' + imgName + '</a>' +
+
+		/* Trim the "url('')" surrounding the image source URL */
+		imgSrc = document.getElementById('img' + i).style.backgroundImage.slice(5, -2);
+		
+		individualImgAttr += '<a class="tooltip" href="' + imgLink + unsplashUTM + '" target="_blank">' + imgName + 
+		'<span><img width="240px" src="' + imgSrc + '"/></span>' + '</a>' +
 		' by <a href="' + imgAuthorLink + unsplashUTM + '" target="_blank">' + imgAuthorName + '<br\></a>'
 	}
 	
