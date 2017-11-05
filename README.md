@@ -7,12 +7,12 @@
 
 * *WebExtension written in plain JavaScript. No libraries. No cruft.*
 * *Displays "deep-thoughts" even in offline-mode (no background-images).*
-* *Fetches relevant fresh background images each-time from the Flickr public feed.*
+* *Fetches relevant fresh background images each-time from Unsplash and Flickr.*
 * *Checkout the [source](https://github.com/TheCodeArtist/deep-thought-tabs/tree/master/addon-src) to learn how to create simple webextension addons for Firefox in JavaScript.*
 * *Few interesting bits of code:*
   * *Fisher-Yates shuffle algorithm.*
-  * *Ken-Burns effect.*
-  * *Visual (image-preview) tooltips in CSS+JS.*
+  * *Ken-Burns effect for still images.*
+  * *Visual (image-preview) tooltips in CSS.*
   * *Asynchronous XMLHttpRequest.*
 
 ## Discover your funny and/or profound side each time you open a new tab.
