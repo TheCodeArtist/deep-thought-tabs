@@ -84,6 +84,23 @@ function loadBackgroundImage(keywords)
 	}
 }
 
+/* Return list of words from a sentence sorted in order of decreasing length */
+function getWordList(sentence) {
+	
+	/* Split the quote into an array of individual words
+	 * Note: Define any characters/words to ignore as a separator.
+	 */
+	var separators = ['-', ' ', '"', '+', '(', ')', '*', ':', ';', '?', '.', ',', '<', '>', '&', '!',];
+	var wordsArray = sentence.toLowerCase().split(new RegExp('(quot)|[' + separators.join('') + ']', 'g'));
+
+	/* Sort the array in order of decreasing word-length */
+	var wordsArray = wordsArray.sort(function(a, b) { 
+		return b.length - a.length;
+	});
+	
+	return wordsArray;
+}
+
 /* Returns a random quote with random font */
 function newQuote() {
 
@@ -121,19 +138,10 @@ function newQuote() {
 	var randomFontSize = Math.floor(Math.random() * 12);
 	document.getElementById("quoteText").style.fontSize = (20 + randomFontSize) + 'px';
 
-	/* Split the quote into an array of individual words
-	 * Note: Define any characters/words to ignore as a separator.
-	 */
-	var separators = ['-', ' ', '"', '\'',  '+', '(', ')', '*', ':', ';', '?', '.', ',', '<', '>', '&', '!',];
-	var wordsArray = quotes[newQuote.quoteId].toLowerCase().split(new RegExp('(quot)|[' + separators.join('') + ']', 'g'));
-
-	/* Sort the array in order of decreasing word-length */
-	var wordsArray = wordsArray.sort(function(a, b) { 
-		return b.length - a.length;
-	});
+	keywordsArray = getWordList(quotes[newQuote.quoteId])
 
 	/* Pick the 3 longest words in the quote */
-	keywords = wordsArray[0] + ',' + wordsArray[1] + ',' + wordsArray[2];
+	keywords = keywordsArray[0] + ',' + keywordsArray[1] + ',' + keywordsArray[2];
 		
 	/* Attempt to fetch a relevant backgroundimage, and update it if found */
 	loadBackgroundImage(keywords)
