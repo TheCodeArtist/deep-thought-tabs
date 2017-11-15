@@ -66,11 +66,13 @@ function populateBackgroundImageFromUnsplash()
 		imgSearchSet = jsonObj.total;
 	}
 
-	/* Shuffle IDs */
+	/* Generate a Shuffled array of IDs
+	 * - with length imgSearchSet
+	 * - with values betwwen 0 and imgSearchSet-1
+	 */
 	for (var i = 0; i < imgSearchSet; i++) {
 		randomImageIds[i] = i;
 	}
-
 	fyShuffle(randomImageIds);
 
 	for (var i = 0; i < 3; i++) {
