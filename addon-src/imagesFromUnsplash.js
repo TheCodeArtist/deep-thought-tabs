@@ -26,7 +26,7 @@ function populateBackgroundImageFromUnsplash()
 	
 	if (unsplashQueriesRemaining == 0) {
 		/* We have hit the unsplash hourly rate-limit.
-		 * Set temporary backoff flasg for subsequent requests and fallback to flickr.
+		 * Set temporary backoff flag for subsequent requests and fallback to flickr.
 		 */
 		loadBackgroundImage.atUnsplashRateLimit = 1;
 		
