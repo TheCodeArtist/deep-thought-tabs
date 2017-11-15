@@ -37,6 +37,14 @@ function populateBackgroundImageFromUnsplash()
 		loadBackgroundImageFromFlickr(keywords);
 		return;
 	}
+
+	/* Abort in case Unsplash returns an error */
+	if (this.status != 200) {
+		console.log('loadBackgroundImageFromUnsplash() returned error: ' + this.status);
+		document.body.style.backgroundImage = 'none';
+		document.getElementById('imgAttr').innerHTML = '';
+		return;
+	}
 	
 	/* Hopefully received a valid JSON response of img search query */
 	var response = this.responseText;
