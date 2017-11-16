@@ -138,7 +138,15 @@ function newQuote() {
 	var randomFontSize = Math.floor(Math.random() * 12);
 	document.getElementById("quoteText").style.fontSize = (20 + randomFontSize) + 'px';
 
-	keywordsArray = getWordList(quotes[newQuote.quoteId])
+	var htmlQuote = quotes[newQuote.quoteId];
+	
+	/* Trim HTML tags */
+	var plainTextQuote = htmlQuote.replace(/<br\s*\/?>/g,' ')
+					.replace(/<\/p>/g, ' ')
+					.replace(/&quot;/g, '"')
+					.replace(/(<([^>]+)>)/g, '');
+
+	keywordsArray = getWordList(htmlQuote)
 
 	/* Pick the 3 longest words in the quote */
 	keywords = keywordsArray[0] + ',' + keywordsArray[1] + ',' + keywordsArray[2];
@@ -150,7 +158,7 @@ function newQuote() {
 	document.getElementById('imgAttr').style.opacity = 1.0;
 	
 	/* Finally show the new quote */
-	document.getElementById('quoteText').innerHTML = quotes[newQuote.quoteId] + '<br />' + '<br />';
+	document.getElementById('quoteText').innerHTML = htmlQuote + '<br />' + '<br />';
 	document.getElementById('quoteText').style.opacity = 1.0;
 	
 	/* and Finally show the button */
